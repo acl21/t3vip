@@ -9,7 +9,7 @@ from git import Repo
 import numpy as np
 from setuptools import sandbox
 
-default_log_dir = f"/home/{os.environ['USER']}/runs" if "USER" in os.environ else "/tmp"
+default_log_dir = f"/home/{os.environ['USER']}/projects/t3vip/logs/runs" if "USER" in os.environ else "/tmp"
 if default_log_dir == "/tmp":
     print("CAUTION: logging to /tmp")
 parser = argparse.ArgumentParser(description="Parse slurm parameters and hydra config overrides")

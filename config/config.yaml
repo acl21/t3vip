@@ -1,6 +1,6 @@
 defaults:
   - callbacks: default
-  - datamodule: default
+  - datamodule: calvin
   - model: T3VIP
   - loss: default
   - trainer: default
@@ -11,7 +11,7 @@ defaults:
   - override hydra/hydra_logging: colorlog
 
 seed: 42
-log_dir: ../
+log_dir: ../logs
 slurm: false
 eval_seq_len: 60
 

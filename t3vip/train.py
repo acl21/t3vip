@@ -44,7 +44,7 @@ def train(cfg: DictConfig) -> None:
 
     log_rank_0(f"Training with the following config:\n{OmegaConf.to_yaml(cfg)}")
     log_rank_0(print_system_env_info())
-    train_logger = setup_logger(cfg, model, cfg.logger.name)
+    train_logger = setup_logger(cfg, cfg.logger.name)
     callbacks = setup_callbacks(cfg.callbacks)
 
     trainer_args = {

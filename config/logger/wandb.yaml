@@ -1,8 +1,8 @@
 _target_: pytorch_lightning.loggers.WandbLogger
-save_dir: .
+save_dir: ~/projects/t3vip/logs
 name: t3vip
 group: t3vip
 log_model: false
-project: rgbd_video
-entity: nematoli
+project: t3vip
+entity: in-ac
 id: ???
