@@ -28,6 +28,7 @@ hydra:
           - log_dir
           - datamodule.dataset.data_dir
           - datamodule.dataset.num_workers
-          - trainer.gpus
+          - trainer.accelerator
+          - trainer.devices
           - trainer.limit_val_batches
 
