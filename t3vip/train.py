@@ -79,11 +79,13 @@ def setup_logger(cfg: DictConfig, name: str, evaluate: bool = False) -> Lightnin
         logger
     """
     cwd_path = Path.cwd()
-    print("cwd_path", cwd_path)
+    # print("cwd_path", cwd_path)
     if cfg.slurm:
-        path_date = cwd_path.parts[5]
-        path_time = cwd_path.parts[6]
-        cfg.logger.name = path_date + "/" + path_time
+        hydra_cfg = hydra.core.hydra_config.HydraConfig.get()
+        logs_dir = Path(hydra_cfg['runtime']['output_dir'])
+        path_date = logs_dir.parts[-2]
+        path_time = logs_dir.parts[-1]
+        cfg.logger.name = path_date + "-" + path_time
     else:
         cfg.logger.name = name
 

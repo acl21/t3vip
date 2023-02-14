@@ -50,11 +50,15 @@ def create_git_copy(repo_src_dir, repo_target_dir):
 
 if not args.no_clone:
     repo_src_dir = Path(__file__).absolute().parents[1]
-    repo_target_dir = log_dir / "t3vip"
-    create_git_copy(repo_src_dir, repo_target_dir)
+    # repo_target_dir = log_dir / "t3vip"
+    # create_git_copy(repo_src_dir, repo_target_dir)
 
-    args.script = repo_target_dir / os.path.relpath(args.script, repo_src_dir)
-    args.train_file = repo_target_dir / os.path.relpath(args.train_file, repo_src_dir)
+    # args.script = repo_target_dir / os.path.relpath(args.script, repo_src_dir)
+    # args.train_file = repo_target_dir / os.path.relpath(args.train_file, repo_src_dir)
+    args.script = repo_src_dir / os.path.relpath(args.script, repo_src_dir)
+    args.train_file = repo_src_dir / os.path.relpath(args.train_file, repo_src_dir)
+
+
 
 if args.partition == "test":
     args.partition = "testdlc_gpu-rtx2080"
